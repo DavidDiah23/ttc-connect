@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tanzania Travel & Safari Company</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Libre+Baskerville:ital@1&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px 60px;
+      background: #8e9faa url('tanzania_background.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .page-wrap {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    /* ── Main card ── */
+    .main-card {
+      background: #fdfaf5 url('card_texture.png') no-repeat center center;
+      background-size: cover;
+      border-radius: 20px;
+      width: 100%;
+      padding: 40px 30px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── Logo ── */
+    .logo-container {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .logo-img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      display: block;
+    }
+
+    /* ── Thank You Note Label ── */
+    .thank-you-label {
+      text-align: center;
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #2a1a0a;
+      margin-bottom: 30px;
+    }
+
+    /* ── Buttons ── */
+    .btn-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 35px;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 50px;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.15s;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn:hover  { opacity: 0.95; transform: translateY(-1px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); }
+    .btn:active { transform: translateY(1px); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
+
+    .btn-facebook    { background: #1d49a7; color: #ffffff; }
+    .btn-instagram   { background: #ed72d4; color: #ffffff; }
+    .btn-tiktok      { background: #e76f85; color: #ffffff; }
+    .btn-youtube     { background: #eb473d; color: #ffffff; }
+    .btn-tripadvisor { background: #91fcdc; color: #111111; }
+    .btn-website     { background: #ffffff; color: #111111; border: 1px solid #111; }
+
+    /* ── Note text ── */
+    .note-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #222;
+      line-height: 1.8;
+      text-align: center;
+      max-width: 360px;
+      margin-bottom: 30px;
+    }
+
+    .note-text .greeting {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+
+    .note-text .closing {
+      display: block;
+      font-weight: 700;
+      margin-top: 15px;
+    }
+
+    /* ── Signature ── */
+    .sig-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 30px;
+      width: 100%;
+    }
+
+    .sig-quote {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #8c4c1a;
+      text-align: center;
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .sig-name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #0d0a06;
+      line-height: 1.0;
+      margin-bottom: 10px;
+    }
+
+    .sig-url {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #8c4c1a;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .sig-url:hover { text-decoration: underline; }
+
+    /* ── Motto Banner ── */
+    .tagline-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: -15px;
+      margin-bottom: 20px;
+    }
+
+    .tagline-banner {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 40px;
+    }
+
+    .tagline-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: #c5ab89;
+      border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%;
+      transform: rotate(-2deg) scaleX(1.05);
+      opacity: 0.85;
+      z-index: -1;
+    }
+
+    .tagline-text {
+      position: relative;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2a160a;
+      letter-spacing: 0.02em;
+    }
+
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <div class="main-card">
+    
+    <div class="logo-container">
+      <img class="logo-img" src="pdf_logo.png" alt="Tanzania Travel & Safari Company Logo" />
+    </div>
+
+    <div class="tagline-wrap">
+      <div class="tagline-banner">
+        <span class="tagline-text">Take it easy to make it easy</span>
+      </div>
+    </div>
+
+    <div class="thank-you-label">Thank you note</div>
+
+    <div class="btn-list">
+      <a href="https://www.tanzaniatravelcompany.com" target="_blank" class="btn btn-website">WEBSITE</a>
+      <a href="https://www.facebook.com/tanzaniatravelcompany" target="_blank" class="btn btn-facebook">FACEBOOK</a>
+      <a href="https://www.instagram.com/tanzaniatravelcompany" target="_blank" class="btn btn-instagram">INSTAGRAM</a>
+      <a href="https://www.tiktok.com/@tanzaniatravelcompany" target="_blank" class="btn btn-tiktok">TIKTOK</a>
+      <a href="https://www.youtube.com/@tanzaniatravelcompany" target="_blank" class="btn btn-youtube">YOUTUBE</a>
+      <a href="https://www.tripadvisor.com" target="_blank" class="btn btn-tripadvisor">TRIPADVISOR</a>
+    </div>
+
+    <div class="note-text">
+      <span class="greeting">Dear Valued Guests,</span>
+      We're pleased to assure you that Tanzania remains safe and open for travel. All our tours and safaris are operating as usual, and our team is ready to welcome you with the warm Tanzanian hospitality you love.<br/><br/>
+      Stay connected with us and follow our latest updates through our social media links above.
+      <span class="closing">Karibu sana Tanzania!</span>
+    </div>
+
+    <div class="sig-section">
+      <div class="sig-quote">
+        'I TOURED TANZANIA WITH<br/>TANZANIA TRAVEL & SAFARI COMPANY'
+      </div>
+      <div class="sig-name">Samuel Diah</div>
+
+      <a class="sig-url" href="https://www.tanzaniatravelcompany.com" target="_blank">www.tanzaniatravelcompany.com</a>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
